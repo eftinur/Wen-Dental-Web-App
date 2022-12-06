@@ -1,0 +1,9 @@
+.selected-date {
+  font-family: "EB Garamond", serif;
+  font-size: 30px;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 3px;
+  color: #fff;
+  padding-top: 24px;
+}

@@ -1,0 +1,31 @@
+.menu li a {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: capitalize;
+} 
+
+.menu li a:hover {
+    background: none;
+    color: #0D98BA;
+
+}
+
+.menu li a:focus {
+    background: none;
+    color: #4e9af8;
+}
+
+.logo-wrapper {
+    font-family: 'EB Garamond', serif;
+    font-size: 28px;
+    font-style: italic;
+    font-weight: 800;
+    line-height: 22px;
+    letter-spacing: 3px;
+    color: #0D98BA;
+}
+
+.hamburger {
+    color: black;
+}

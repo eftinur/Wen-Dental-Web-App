@@ -1,0 +1,10 @@
+.card-body .brief {
+  font-size: 16px;
+  font-weight: 400;
+  color: #404258;
+}
+
+.card-body h2 {
+    color: #404258;
+    padding: 8px 0;
+}
