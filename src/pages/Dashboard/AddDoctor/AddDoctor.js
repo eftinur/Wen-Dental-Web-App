@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 const AddDoctor = () => {
   const imageHostKey = '9caa488ca234357abc947511219ed16f';
@@ -35,7 +36,7 @@ const AddDoctor = () => {
             specialty: data.specialty,
             image: imgData.data.url
         }
-        fetch('http://localhost:5001/doctors', {
+        fetch('http://localhost:5000/doctors', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -46,6 +47,7 @@ const AddDoctor = () => {
         .then(res => res.json())
         .then(result => {
             console.log(result);
+            toast.success('New Doctor Added Successfully')
             navigate('/dashboard/managedoctors');
         })
         }
@@ -55,7 +57,7 @@ const AddDoctor = () => {
   const { data: specialties = [], isLoading } = useQuery({
     queryKey: ["specialties"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5001/appointmentspecialty");
+      const res = await fetch("http://localhost:5000/appointmentspecialty");
       const data = await res.json();
       return data;
     },
@@ -112,7 +114,7 @@ const AddDoctor = () => {
           </label>
           <input
             type="file"
-            className="input input-bordered w-full"
+            className="input input-bordered w-full pt-2"
             {...register("image", { required: "Please upload your image" })}
           />
           {errors.email && <p role="alert">{errors.email.message}</p>}

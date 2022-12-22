@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import useToken from '../../hooks/useToken';
+import toast from 'react-hot-toast';
 
 const SignUp = () => {
     const { register, handleSubmit, formState: {errors} } = useForm();
@@ -11,6 +12,7 @@ const SignUp = () => {
     const [createUserEmail, setCreatedUserEmail] = useState('');
     const [token] = useToken(createUserEmail);
     const navigate = useNavigate();
+
 
     if(token){
       navigate('/');
@@ -28,6 +30,7 @@ const SignUp = () => {
         updateUser(userInfo)
         .then( () => {
           saveUser(data.name, data.email);
+          toast.success('Welcome to Wen Dental Studio')
         })
         .catch(error => {
             console.log(error)
@@ -35,13 +38,13 @@ const SignUp = () => {
         console.log(user);
       })
       .catch(err => {
-        console.log(err)
+        console.log(err);
       })
     }
 
     const saveUser = (name, email) => {
       const user = {name, email};
-      fetch('http://localhost:5001/users', {
+      fetch('http://localhost:5000/users', {
         method: 'POST',
         headers: {
           'content-type': 'application/json'
@@ -57,10 +60,10 @@ const SignUp = () => {
     }
 
     return (
-        <div className='min-h-screen'>
-        <div className="max-w-[1440px] mx-auto flex justify-center mt-8">
-          <form className="w-96" onSubmit={handleSubmit(handleSignUp)}>
-            <h2 className="text-blue-400 text-3xl py-4">Login Here</h2>
+        <section className='min-h-screen bg-[#D0CCBF] flex justify-center items-center pb-8'>
+        <div className="w-3/4 md:w-2/4 lg:w-1/4 mx-auto bg-[#fff] mt-8 px-8 py-16">
+          <form className="w-5/6 mx-auto" onSubmit={handleSubmit(handleSignUp)}>
+            <h2 className="text-3xl py-4 text-center">Register Here</h2>
             
             <div className="form-control w-full">
               <label className="label">
@@ -68,7 +71,7 @@ const SignUp = () => {
               </label>
               <input
                 type="text"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full rounded-none"
                 {...register("name")}
               />
     
@@ -79,7 +82,7 @@ const SignUp = () => {
               </label>
               <input
                 type="text"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full rounded-none"
                 {...register("email" , {required: 'Please enter your email'})}
               />
               {errors.email && <p role="alert">{errors.email.message}</p>}
@@ -92,18 +95,17 @@ const SignUp = () => {
               </label>
               <input
                 type="text"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full rounded-none"
                 {...register("password", {required: 'Please enter your password'})}
               />
               {errors.password && <p role='alert'>{errors.password.message}</p>}
             </div>
-            
-            <button className="btn btn-primary w-full my-4 ">Sign in</button>
+
+            <button className="btn btn-primary w-full my-4 rounded-none border-none bg-[#FC5400] hover:bg-[#FC5800]">Sign in</button>
           </form>
-          
+          <p className="w-3/4 mx-auto text-center">Already have an account? <Link to='/login' className="text-blue-400">Log in</Link></p>
         </div>
-        <p className="max-w-[1440px] mx-auto text-center">Already have an account <Link to='/login' className="text-blue-400">Log in</Link></p>
-        </div>
+        </section>
     );
 };
 

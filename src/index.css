@@ -6,10 +6,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  font-family: 'EB Garamond', serif;
-  font-style: italic;
-  line-height: 22px;
-  letter-spacing: 3px;
+  /*  */
+  font-family: 'Merriweather', sans-serif;
 }
 
 code {

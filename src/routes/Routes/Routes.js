@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import DashboardLayout from "../../Layout/DashboardLayout";
 import Main from "../../Layout/Main";
+import About from "../../pages/About/About";
 import Appointment from "../../pages/Appointment/Appointment/Appointment";
 import AddDoctor from "../../pages/Dashboard/AddDoctor/AddDoctor";
 import AllUsers from "../../pages/Dashboard/AllUsers/AllUsers";
@@ -13,7 +14,7 @@ import SignUp from "../../pages/SignUp/SignUp";
 import AdminRoute from "./AdminRoute";
 import PrivateRoute from "./PrivateRoute";
 
-const router =createBrowserRouter([
+const router = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
@@ -25,6 +26,10 @@ const router =createBrowserRouter([
             {
                 path: '/home',
                 element: <Home></Home>
+            },
+            {
+                path: '/about',
+                element: <About />
             },
             {
                 path: '/appointment',
@@ -63,7 +68,7 @@ const router =createBrowserRouter([
             {
                 path: '/dashboard/payment/:id',
                 element: <Payment></Payment>,
-                loader: ({params}) => fetch(`http://localhost:5001/bookings/${params.id}`)
+                loader: ({params}) => fetch(`http://localhost:5000/bookings/${params.id}`)
                 
             }
         ]

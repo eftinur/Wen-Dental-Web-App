@@ -1,26 +1,26 @@
 import React from "react";
+import SecondaryButton from "../../../component/SecondaryButton/SecondaryButton";
 
 const ScheduleCard = ({ option, setTreatment }) => {
   const { name, slots, price } = option;
   return (
-    <div className="demo card card-compact w-96 bg-base-100 shadow-xl mx-auto my-12 p-6">
-      <div className="card-body">
-        <h2 className="card-title">{name}</h2>
-        <p>Time: {slots.length > 0 ? slots[0] : "Not Available"}</p>
-        <p className="py-2">
+    <div className="bg-[#fff] text-[#2a2a2a]">
+      <div className="px-6 py-12">
+        <h2 className="text-xl font-bold">{name}</h2>
+        <p className="py-3">Time: {slots.length > 0 ? slots[0] : "Not Available"}</p>
+        <p>
           Left: {slots.length} {slots.length > 1 ? "spaces" : "space"} available
         </p>
-        <small className="text-red-400 text-2xl">$ {price}</small>
-        <div className="card-actions">
+        <p className="text-2xl py-4">$ {price}</p>
+        <SecondaryButton>
           <label
             htmlFor="booking-modal"
-            className="btn btn-primary w-full"
             onClick={() => setTreatment(option)}
             disabled={slots.length === 0}
           >
             Book Appointment
           </label>
-        </div>
+        </SecondaryButton>
       </div>
     </div>
   );

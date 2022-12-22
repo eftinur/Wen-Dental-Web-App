@@ -1,24 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import PrimaryButton from "../../../component/PrimaryButton/PrimaryButton";
 import "./Banner.css";
 
 const Banner = () => {
   return (
-    <section className="hero my-6 py-8">
-      <div className="hero-content flex-col lg:flex-row-reverse px-4 max-w-[1440px] mx-auto">
-        <div className="banner-photo w-3/4">
-        <img
-          src="https://images.pexels.com/photos/3845810/pexels-photo-3845810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          alt="bannerImg"
-          className="rounded-lg shadow-2xl"
-        />
-        </div>
-
-        <div className="px-4 banner-text">
-          <h1 className="text-5xl font-bold mb-8">
-            Seeing the dentist just got cooler
-          </h1>
-
-          <button className="btn btn-primary">Get Started</button>
+    <section id="banner" className="hero py-8">
+      <div className="w-3/4 mx-auto flex items-end">
+        <div className="w-full lg:w-5/12 bg-[#FC5400] text-[#fff] text-2xl md:text-4xl px-16 py-20">
+          <h1 className="py-6">Exceptional places, communities and services to help you thrive</h1>
+          <Link to='/appointment'>
+            <PrimaryButton>Book online</PrimaryButton>
+          </Link>
         </div>
       </div>
     </section>

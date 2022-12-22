@@ -5,7 +5,7 @@ import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
 const BookingModal = ({ treatment, setTreatment, selected, refetch }) => {
   const { name, slots, price } = treatment;
   const { user } = useContext(AuthContext);
-  
+
   const date = format(selected, "PP");
 
   const handleBooking = (e) => {
@@ -24,11 +24,11 @@ const BookingModal = ({ treatment, setTreatment, selected, refetch }) => {
       slotTime,
       email,
       phone,
-      price
-    }
+      price,
+    };
     console.log(booking);
 
-    fetch("http://localhost:5001/bookings", {
+    fetch("http://localhost:5000/bookings", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -38,17 +38,13 @@ const BookingModal = ({ treatment, setTreatment, selected, refetch }) => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if(data.acknowledged) {
-          alert('Booked Successfully')
+        if (data.acknowledged) {
+          alert("Booked Successfully");
           refetch();
+        } else {
+          alert(data.message);
         }
-        else{
-          alert(data.message)
-        }
-      })
-
-
-
+      });
   };
   return (
     <>
@@ -61,21 +57,22 @@ const BookingModal = ({ treatment, setTreatment, selected, refetch }) => {
           >
             ✕
           </label>
-          <h3 className="text-lg font-bold">{name}</h3>
+          <h3 className="text-lg font-bold pb-5">{name}</h3>
           <form onSubmit={handleBooking}>
             <input
               name="date"
               type="text"
               value={date}
               className="input input-bordered w-full"
-              disabled
+              readOnly
             />
 
-            <select name="slot" className="select select-bordered w-full">
-              
-             {
-              slots.map((slot, index) => <option key={index} value={slot}>{slot}</option>)
-             }
+            <select name="slot" className="select select-bordered w-full mt-3">
+              {slots.map((slot, index) => (
+                <option key={index} value={slot}>
+                  {slot}
+                </option>
+              ))}
             </select>
 
             <input
@@ -83,7 +80,7 @@ const BookingModal = ({ treatment, setTreatment, selected, refetch }) => {
               type="text"
               defaultValue={user?.displayName}
               placeholder="Enter your name"
-              className="input input-bordered w-full"
+              className="input input-bordered w-full my-3"
             />
             <input
               name="email"
@@ -96,11 +93,11 @@ const BookingModal = ({ treatment, setTreatment, selected, refetch }) => {
               name="phone"
               type="text"
               placeholder="Enter your phone number"
-              className="input input-bordered w-full"
+              className="input input-bordered w-full my-3"
             />
             <input
               type="submit"
-              className="input input-bordered w-full"
+              className="input input-bordered w-full bg-[#FC5400] text-[#fff]"
               value="Submit"
             />
           </form>

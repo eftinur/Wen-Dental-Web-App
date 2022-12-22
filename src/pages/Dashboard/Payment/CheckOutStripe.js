@@ -14,7 +14,7 @@ const CheckOutStripe = ({ booking }) => {
 
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
-    fetch("http://localhost:5001/create-payment-intent", {
+    fetch("http://localhost:5000/create-payment-intent", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -79,7 +79,7 @@ const CheckOutStripe = ({ booking }) => {
         bookingId: _id,
       };
 
-      fetch("http://localhost:5001/payments", {
+      fetch("http://localhost:5000/payments", {
         method: "POST",
         headers: {
           "content-type": "application/json",

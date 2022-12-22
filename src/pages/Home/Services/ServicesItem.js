@@ -1,18 +1,22 @@
 import React from "react";
-import './ServicesItems.css';
+import "./ServicesItems.css";
+import { Link } from "react-router-dom";
 
 const ServicesItem = ({ service }) => {
-    const {name, brief, image} = service;
+  const { name, brief } = service;
   return (
-    <div className="card card-compact w-96 bg-base-100 shadow-xl mx-auto my-12 p-6">
-      <figure>
-        <img src={image} alt="Shoes" />
-      </figure>
+    <div className="bg-[#fff] shadow-xl mx-auto">
+      <figure></figure>
       <div className="card-body">
-        <h2>{name}</h2>
-        <p className="brief">{brief}</p>
+        <h2 className="text-xl font-bold">{name}</h2>
+        <p className="text-sm py-5">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum
+          fugiat voluptas quis nostrum consequatur obcaecati tenetur provident
+          nihil accusantium deserunt asperiores quo optio, quam ex placeat
+          aperiam quasi!
+        </p>
         <div className="card-actions justify-start">
-          <button className="btn btn-primary w-full">Buy Now</button>
+          <Link className="text-[#FC5400]">Learn more ></Link>
         </div>
       </div>
     </div>

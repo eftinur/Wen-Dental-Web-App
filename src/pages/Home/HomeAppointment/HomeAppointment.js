@@ -1,27 +1,15 @@
 import React from "react";
-import homeAppImg from '../../../assets/images/doctor-small.png'
+import PrimaryButton from "../../../component/PrimaryButton/PrimaryButton";
 
 const HomeAppointment = () => {
   return (
-    <section className="max-w-[1440px] mx-auto mt-32">
-      {/* <div className="hero  bg-primary text-white">
-        <div className="hero-content flex-col lg:flex-row">
-          <img
-            src={homeAppImg}
-            alt=""
-            className="-mt-48"
-          />
-          <div>
-            <h1 className="text-5xl font-bold">Box Office News!</h1>
-            <p className="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
-            </p>
-            <button className="btn btn-secondary">Get Started</button>
-          </div>
-        </div>
-      </div> */}
+    <section className="bg-[#2A2A2A] text-center py-14 text-[#fff]">
+     <>
+     <h3 className="text-3xl pb-6">Book your check-up today</h3>
+     <PrimaryButton><p className='text-lg'>Book online</p></PrimaryButton>
+     <p className="pt-6 pb-3">When booking online select the 'SMILE' offer</p>
+     <p>Box Hill | Hughesdale | Moonee Ponds | Rowville | Spring Street</p>
+     </>
     </section>
   );
 };
