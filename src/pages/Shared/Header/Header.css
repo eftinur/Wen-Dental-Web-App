@@ -4,21 +4,20 @@
     font-weight: 500;
     text-transform: capitalize;
 } 
-
+ */
 
 
 
 .logo-wrapper {
-    font-family: 'EB Garamond', serif;
+    font-family: 'Gruppo', cursive;
     font-size: 28px;
-    font-style: italic;
     font-weight: 800;
     line-height: 22px;
     letter-spacing: 3px;
-    color: #0D98BA;
+    color: #FC5400;
 }
 
-.hamburger {
+/* .hamburger {
     color: black;
 } */
 

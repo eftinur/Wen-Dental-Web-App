@@ -10,7 +10,7 @@ const AdminRoute = ({ children }) => {
 
   if (loading || isAdminLoading) {
     return (
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center min-h-screen">
         <span class="loader"></span>
       </div>
     );

@@ -6,12 +6,16 @@ import "./Banner.css";
 const Banner = () => {
   return (
     <section id="banner" className="hero py-8">
-      <div className="w-3/4 mx-auto flex items-end">
-        <div className="w-full lg:w-5/12 bg-[#FC5400] text-[#fff] text-2xl md:text-4xl px-16 py-20">
-          <h1 className="py-6">Exceptional places, communities and services to help you thrive</h1>
-          <Link to='/appointment'>
-            <PrimaryButton>Book online</PrimaryButton>
-          </Link>
+      <div className="w-3/4 mx-auto">
+        <div className="text-[#fff]">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl leading-snug">Welcome to Wen Dental Clinic</h1>
+          <p className="pt-6 pb-9 text-sm lg:text-xl">
+            Bicton Dental Clinic always creates smiles for life, the best
+            Dentist & Dental Clinic in Bicton in southwest Perth was founded in
+            2016 with the sole aim of providing quality affordable dental care
+            to the residents of Perth and the neighbouring community.
+          </p>
+          <PrimaryButton>Learn more</PrimaryButton>
         </div>
       </div>
     </section>

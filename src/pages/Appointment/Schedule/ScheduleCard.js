@@ -1,5 +1,5 @@
 import React from "react";
-import SecondaryButton from "../../../component/SecondaryButton/SecondaryButton";
+import PrimaryButton from "../../../component/PrimaryButton/PrimaryButton";
 
 const ScheduleCard = ({ option, setTreatment }) => {
   const { name, slots, price } = option;
@@ -12,7 +12,7 @@ const ScheduleCard = ({ option, setTreatment }) => {
           Left: {slots.length} {slots.length > 1 ? "spaces" : "space"} available
         </p>
         <p className="text-2xl py-4">$ {price}</p>
-        <SecondaryButton>
+        <PrimaryButton>
           <label
             htmlFor="booking-modal"
             onClick={() => setTreatment(option)}
@@ -20,7 +20,7 @@ const ScheduleCard = ({ option, setTreatment }) => {
           >
             Book Appointment
           </label>
-        </SecondaryButton>
+        </PrimaryButton>
       </div>
     </div>
   );

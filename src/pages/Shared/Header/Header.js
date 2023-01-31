@@ -21,7 +21,7 @@ const Header = ({handler}) => {
         <Link to="/about">About us</Link>
       </li>
       <li>
-        <Link to="/appointment">Get Appointment</Link>
+        <Link to="/treatments">Treatments</Link>
       </li>
       <li>
         <Link to="/dashboard">Dashboard</Link>

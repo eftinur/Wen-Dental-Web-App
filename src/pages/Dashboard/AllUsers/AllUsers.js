@@ -30,7 +30,7 @@ const AllUsers = () => {
   }
 
   const hadnleDelete = (id) => {
-    fetch(`http://localhost:5000/doctors/${id}}`, {
+    fetch(`http://localhost:5000/users/${id}`, {
       method: "DELETE",
       headers: {
         authorization: `bearer ${localStorage.getItem("accessToken")}`,
@@ -40,11 +40,12 @@ const AllUsers = () => {
       .then((data) => {
         console.log(data);
         if (data.deletedCount > 0) {
-            toast.success('Deleted Successfully');
-            refetch();
+          toast.success("Deleted Successfully");
+          refetch();
         }
       });
   };
+
   return (
     <div>
       <h3 className="text-4xl">All Users</h3>

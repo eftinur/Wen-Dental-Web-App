@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import aboutImg from "../../assets/images/Open Peeps - Standing.png";
-import SecondaryButton from "../../component/SecondaryButton/SecondaryButton";
+import PrimaryButton from "../../component/PrimaryButton/PrimaryButton";
 
 const About = () => {
   return (
@@ -41,7 +41,7 @@ const About = () => {
       </div>
       <div className="bg-[#D0CCBF] py-8">
         <div className="w-3/4 mx-auto flex items-center flex-col md:flex-row">
-          <div className="flex-1 pb-6 ">
+          <div className="flex-1 pb-6 text-center">
             <h2 className="text-2xl">What is Real Wellbeing?</h2>
             <p className="py-4">
               There’s a lot more to Real Wellbeing than just physical health,
@@ -49,13 +49,9 @@ const About = () => {
               Find podcasts, articles and videos on our Real Wellbeing content
               hub.
             </p>
-            <SecondaryButton>
+            <PrimaryButton>
               <Link to="/login">Sign in</Link>
-            </SecondaryButton>
-          </div>
-
-          <div className="w-1/3 md:pb-0">
-            <img src={aboutImg} alt="" className="mx-auto" />
+            </PrimaryButton>
           </div>
         </div>
       </div>
