@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { useState } from "react";
 import ConfirmationModal from "../../Shared/ConfirmationModal/ConfirmationModal";
-import toast from 'react-hot-toast';
+import toast from "react-hot-toast";
 
 const ManageDoctor = () => {
   const [deleteDoctor, setDeleteDoctor] = useState(null);
@@ -38,14 +38,18 @@ const ManageDoctor = () => {
       .then((data) => {
         console.log(data);
         if (data.deletedCount > 0) {
-            toast.success('Deleted Successfully');
-            refetch();
+          toast.success("Deleted Successfully");
+          refetch();
         }
       });
   };
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="flex justify-center">
+        <span class="loader"></span>
+      </div>
+    );
   }
   return (
     <div>

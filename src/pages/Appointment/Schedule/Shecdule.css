@@ -13,7 +13,7 @@
   height: 48px;
   display: inline-block;
   position: relative;
-  background: #000;
+  background: #FC5400;
   box-sizing: border-box;
   animation: flipX 1s linear infinite;
 }

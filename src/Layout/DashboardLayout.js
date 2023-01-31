@@ -3,6 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 import { AuthContext } from "../context/AuthProvider/AuthProvider";
 import useAdmin from "../hooks/useAdmin";
 import Header from "../pages/Shared/Header/Header";
+import './style.css';
 
 const DashboardLayout = () => {
   const { user } = useContext(AuthContext);
@@ -11,7 +12,7 @@ const DashboardLayout = () => {
     <div>
       <Header></Header>
 
-      <div className="drawer drawer-mobile">
+      <div className="drawer drawer-mobile w-3/4 mx-auto">
         <input
           id="dashboard-drawer"
           type="checkbox"
@@ -28,7 +29,7 @@ const DashboardLayout = () => {
         </div>
         <div className="drawer-side">
           <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
-          <ul className="menu p-4 w-80 text-base-content">
+          <ul className="menu w-80 text-base-content">
             <li>
               <Link to="/dashboard">My Appointments</Link>
             </li>
